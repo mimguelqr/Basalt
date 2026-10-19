@@ -2,3 +2,5 @@ walker
 elephant
 elephant-desktopapplications
 wleave-git
+overskride
+pipewire-control-center
