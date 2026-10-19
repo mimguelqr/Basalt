@@ -1,0 +1,80 @@
+{
+  "button-aspect-ratio": "1/1",
+  "no-version-info": true,
+  "margin": "28%",
+  "column-spacing": "9px",
+  "row-spacing": "9px",
+  "buttons": [
+    {
+      "label": "lock",
+      "action": [
+        {
+          "$DESKTOP_SESSION": "gnome",
+          "shell": "loginctl lock-session"
+        },
+        {
+          "executable": "gtklock"
+        },
+        {
+          "executable": "swaylock"
+        }
+      ],
+      "text": "Lock",
+      "keybind": "l",
+      "icon": "/home/default/.config/wleave/lock.svg"
+    },
+    {
+      "label": "hibernate",
+      "action": "systemctl hibernate",
+      "text": "Hibernate",
+      "keybind": "h",
+      "icon": "/home/default/.config/wleave/hibernate.svg"
+    },
+    {
+      "label": "logout",
+      "action": [
+        {
+          "$DESKTOP_SESSION": "niri",
+          "shell": "niri msg action quit --skip-confirmation"
+        },
+        {
+          "$DESKTOP_SESSION": "sway",
+          "shell": "swaymsg exit"
+        },
+        {
+          "$DESKTOP_SESSION": "plasma",
+          "shell": "qdbus org.kde.KWin /Session org.kde.KWin.Session.quit"
+        },
+        {
+          "$DESKTOP_SESSION": "gnome",
+          "shell": "gnome-session-quit --no-prompt"
+        },
+        "loginctl terminate-user $USER"
+      ],
+      "text": "Logout",
+      "keybind": "e",
+      "icon": "/home/default/.config/wleave/logout.svg"
+    },
+    {
+      "label": "shutdown",
+      "action": "systemctl poweroff",
+      "text": "Shutdown",
+      "keybind": "s",
+      "icon": "/home/default/.config/wleave/shutdown.svg"
+    },
+    {
+      "label": "suspend",
+      "action": "systemctl suspend",
+      "text": "Suspend",
+      "keybind": "u",
+      "icon": "/home/default/.config/wleave/suspend.svg"
+    },
+    {
+      "label": "reboot",
+      "action": "systemctl reboot",
+      "text": "Reboot",
+      "keybind": "r",
+      "icon": "/home/default/.config/wleave/reboot.svg"
+    }
+  ]
+}
