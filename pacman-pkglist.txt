@@ -1,0 +1,17 @@
+hyprland
+quickshell
+bluez
+bluez-tools
+hyprpaper
+hypridle
+hyprlock
+satty
+grim
+slurp
+ghostty
+mission-center
+base-devel
+git
+firefox
+neovim
+nautilus
