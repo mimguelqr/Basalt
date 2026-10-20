@@ -4,3 +4,4 @@ elephant-desktopapplications
 wleave-git
 overskride
 pipewire-control-center
+portmaster-bin

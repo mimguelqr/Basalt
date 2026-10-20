@@ -15,3 +15,6 @@ git
 firefox
 neovim
 nautilus
+flatpak
+obsidian
+torbrowser-launcher
