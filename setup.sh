@@ -7,14 +7,13 @@ set -e
 install_pacman_packages() {
   sudo pacman -Syu --noconfirm --needed - <pacman-pkglist.txt
 
-  if [ $EUID -eq 0 ]; then
-    read -p "Do you want to clean the package database? [y/N] " -n 1 -r
-    echo ""
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-      sudo pacman --noconfirm -Sc
-      echo "Package cache cleaned."
-    fi
+  read -p "Do you want to clean the package database? [y/N] " -n 1 -r
+
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    sudo pacman --noconfirm -Sc
+    echo "Pacman cache cleaned."
   fi
+
 }
 
 # Yay Installation
@@ -36,14 +35,13 @@ install_yay() {
 install_yay_packages() {
   yay -S --needed --noconfirm - <yay-pkglist.txt
 
-  if [ $EUID -eq 0 ]; then
-    read -p "Do you want to clean the package database? [y/N] " -n 1 -r
-    echo ""
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-      yay --noconfirm -Sc
-      echo "Package cache cleaned."
-    fi
+  read -p "Do you want to clean the package database? [y/N] " -n 1 -r
+
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    yay --noconfirm -Sc
+    echo "Yay cache cleaned."
   fi
+
 }
 
 # Dot Files Cloning
